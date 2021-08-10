@@ -6,6 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
+import { opportunities } from "../../cache/cache";
 import { Input } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
@@ -81,7 +82,13 @@ export default function Opportunities({ opps, ...props }) {
 const Wrapper = styled.div``;
 
 export async function getStaticProps() {
-  let opps = await prisma.posting.findMany();
+  let opps;
+  try {
+    opps = await prisma.posting.findMany();
+  } catch (e) {
+    opps = opportunities;
+  }
+
   opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
 
   return {
