@@ -28,8 +28,7 @@ export default function Blog({ blogs, ...props }) {
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    blogs.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
-    setBlogPosts(posts);
+    setBlogPosts(blogs);
     setIsLoading(false);
   }, []);
 
