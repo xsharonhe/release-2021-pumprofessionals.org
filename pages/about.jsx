@@ -43,7 +43,7 @@ const nationalBoard = [
   {
     name: "Shiro Puwa",
     avatar: Shiro,
-    position: "VP of National Ops",
+    position: "VP of National Operations",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
@@ -60,14 +60,14 @@ const nationalBoard = [
   },
   {
     name: "Ellie Tiliakou",
-    position: "VP of Western Reg. Ops",
+    position: "VP of Regional Operations",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340
   },
   {
     name: "Richard Xi",
-    position: "VP of Eastern Reg. Ops",
+    position: "VP of Regional Operations",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,

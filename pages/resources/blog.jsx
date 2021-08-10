@@ -93,6 +93,8 @@ export async function getStaticProps() {
   try {
     blogs = await prisma.post.findMany();
   } catch (e) {
+    /* eslint-disable no-console */
+    console.log(e);
     blogs = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
   }
 
