@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-import TitleGraphic from "../../public/home/top-section-graphic.svg";
+import MainGraphic from "../../public/home/MainGraphic.png";
 import { baseTheme } from "../../theme";
 import { media, CONSTANTS } from "../../utils";
 import { Text, Button } from "../../components";
@@ -16,16 +16,16 @@ export const TopSection = ({ ...props }) => (
       <SText size="default">{CONSTANTS.registered_charity_descr}</SText>
       <Button>
         <ButtonText size="default" bold="true">
-          <Link href="/donate">
-            <a style={{ color: baseTheme.colors.navy }}>Donate</a>
+          <Link href="/sponsors">
+            <a style={{ color: baseTheme.colors.navy }}>Sponsor</a>
           </Link>
         </ButtonText>
       </Button>
     </FirstColumn>
     <SecondColumn>
       <Graphic
-        src={TitleGraphic}
-        alt="Title graphic - person with book, stethoscope, pills and syringe"
+        src={MainGraphic}
+        alt="Title graphic - Doctor with stethoscope"
         height={450}
         width={450}
       />
@@ -41,15 +41,10 @@ const MainContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   ${media(
-    800,
+    "tablet",
     `
         padding: 5%;
-        margin: 0 7& 7& 7%;
-        `
-  )};
-  ${media(
-    700,
-    `
+        margin: 0 7% 7% 7%;
         flex-direction: column-reverse;
         `
   )};
@@ -104,9 +99,9 @@ const Graphic = styled(Image)`
         `
   )};
   ${media(
-    600,
+    "tablet",
     `
-        max-width: 300px;
+        max-width: 200px;
         `
   )};
 `;
@@ -132,12 +127,6 @@ const SecondColumn = styled.div`
   )};
   ${media(
     "tablet",
-    `
-        padding-left: 2em;
-        `
-  )};
-  ${media(
-    700,
     `
         padding: 0 0 0 0;
         `

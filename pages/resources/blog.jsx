@@ -53,23 +53,23 @@ export default function Blog({ blogs, ...props }) {
       <PageLayout>
         <ToastContainer />
         <Wrapper {...props}>
-            <Title
-              title="Welcome To PuMP Digest"
-              image={SpeechBubble}
-              imageWidth={150}
-              imageHeight={150}
-            />
-            <Input
-              placeholder="Search blog"
-              name="blog-name"
-              type="text"
-              value={searchParameter}
-              onChange={handleChange}
-            />
+          <Title
+            title="Welcome To PuMP Digest"
+            image={SpeechBubble}
+            imageWidth={150}
+            imageHeight={150}
+          />
+          <Input
+            placeholder="Search blog"
+            name="blog-name"
+            type="text"
+            value={searchParameter}
+            onChange={handleChange}
+          />
           {isLoading ? (
-              <Loading color={baseTheme.colors.navy} />
-            ) : (
-              <>
+            <Loading color={baseTheme.colors.navy} />
+          ) : (
+            <>
               {!!blogPosts &&
                 blogPosts.map(({ title, slug }) => (
                   <div key={title}>
@@ -78,7 +78,7 @@ export default function Blog({ blogs, ...props }) {
                     </Link>
                   </div>
                 ))}
-              </>
+            </>
           )}
         </Wrapper>
       </PageLayout>
@@ -93,10 +93,11 @@ export async function getStaticProps() {
   try {
     blogs = await prisma.post.findMany();
   } catch (e) {
-    /* eslint-disable no-console */
-    console.log(e);
-    blogs = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
+    blogs = posts;
   }
+  blogs = blogs
+    .sort((post1, post2) => (post1.date > post2.date ? 1 : -1))
+    .filter((post) => post.published);
 
   return {
     props: { blogs },

@@ -1,8 +1,8 @@
 import { LeftImageTextLayout } from "../../../components";
-import SampleGraphic from "../../../public/home/top-section-graphic.svg";
+import UASLogo from "../../../public/resources/uas-logo.png";
 
 export const UASLayout = () => (
-  <div>
+  <div style={{ marginTop: "5%" }}>
     <LeftImageTextLayout
       titleText="What is UAS?"
       descriptions={[
@@ -12,7 +12,9 @@ export const UASLayout = () => (
         on admission requirements, program curriculum, student life, extracurricular
         opportunities, and more.`,
       ]}
-      graphic={SampleGraphic}
+      graphic={UASLogo}
+      imageWidth={300}
+      imageHeight={300}
     />
   </div>
 );
