@@ -7,7 +7,6 @@ import { posts } from "../cache/cache";
 const DIGEST_PATHS = join(process.cwd(), "_digest");
 const AUTHOR_PATHS = join(process.cwd(), "_author");
 const OPPORTUNITIES_PATHS = join(process.cwd(), "_direct");
-const EVENTS_PATHS = join(process.cwd(), "_events");
 
 const MONTH = 0;
 
@@ -29,9 +28,6 @@ export function getSlug(pathType, slugName) {
       break;
     case "opp":
       folderPath = OPPORTUNITIES_PATHS;
-      break;
-    case "event":
-      folderPath = EVENTS_PATHS;
       break;
     default:
       folderPath = "";
