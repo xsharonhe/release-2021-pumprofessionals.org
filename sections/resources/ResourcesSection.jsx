@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { StudentResource } from "../../components";
+import { ImageInfoLayout } from "../../components";
 import PuMPDirect from "../../public/resources/PuMPDirect.png";
-import PuMPDigest from "../../public/blog/written-speech-bubble.svg";
+import PuMPDigest from "../../public/home/MainGraphic.png";
 import UASLogo from "../../public/resources/uas-logo.png";
 import { baseTheme } from "../../theme";
 
@@ -10,8 +10,7 @@ export const ResourcesSection = () => {
   const resources = [
     {
       titleText: "PuMP Direct",
-      descriptionText: `Browse and filter our database of local opportunities in
-        healthcare`,
+      descriptionText: `Browse and filter through our database of volunteering, research, and leadership opportunities near you.`,
       buttons: [
         {
           color: "yellow",
@@ -29,8 +28,8 @@ export const ResourcesSection = () => {
         programs.`,
       buttons: [
         {
-          color: "white",
-          text: "Join our Community of 800+ Students",
+          color: "yellow",
+          text: "Join our community of 900+ students",
           link: "https://discord.com/invite/vpyF7nCtkm",
           external: true,
         },
@@ -63,10 +62,9 @@ export const ResourcesSection = () => {
     },
   ];
 
-  /* TODO: add wrapper to increase margin around resources */
   return (
     <>
-      <StudentResource
+      <ImageInfoLayout
         key={resources[0].titleText}
         titleText={resources[0].titleText}
         descriptionText={resources[0].descriptionText}
@@ -77,7 +75,7 @@ export const ResourcesSection = () => {
         isGraphicLeft={resources[0].isGraphicLeft}
         style={{ marginTop: "5%" }}
       />
-      <MiddleStudentResource
+      <MiddleImageInfoLayout
         key={resources[1].titleText}
         titleText={resources[1].titleText}
         descriptionText={resources[1].descriptionText}
@@ -88,7 +86,7 @@ export const ResourcesSection = () => {
         isGraphicLeft={resources[1].isGraphicLeft}
         textColor={baseTheme.colors.white}
       />
-      <StudentResource
+      <ImageInfoLayout
         key={resources[2].titleText}
         titleText={resources[2].titleText}
         descriptionText={resources[2].descriptionText}
@@ -103,11 +101,10 @@ export const ResourcesSection = () => {
   );
 };
 
-const MiddleStudentResource = styled(StudentResource)`
-  padding: 5%;
-  margin: 5%;
-  border-radius: 72px;
+const MiddleImageInfoLayout = styled(ImageInfoLayout)`
   ${({ theme }) => `
     background-color: ${theme.colors.greyBlue};
+    border-radius: 44px;
+    margin: 0 3%;
   `};
 `;

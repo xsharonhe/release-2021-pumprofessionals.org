@@ -7,7 +7,13 @@ import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
 import { opportunities } from "../../cache/cache";
-import { Input, Loading, Multiselector, Text } from "../../components";
+import {
+  Input,
+  Loading,
+  Multiselector,
+  OpportunityCard,
+  Text,
+} from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
@@ -124,15 +130,32 @@ export default function Opportunities({ opps, ...props }) {
               ) : (
                 <>
                   {!!oppPosts &&
-                    oppPosts.map(({ postingName, slug }) => (
-                      <div key={postingName}>
-                        <Link href={`/resources/opportunities/${slug}`}>
-                          <a style={{ color: baseTheme.colors.navy }}>
-                            {postingName}
-                          </a>
-                        </Link>
-                      </div>
-                    ))}
+                    oppPosts.map(
+                      ({
+                        tags,
+                        postingName,
+                        orgImages,
+                        orgName,
+                        city,
+                        postedDate,
+                        slug,
+                      }) => (
+                        <div key={postingName}>
+                          <Link href={`/resources/opportunities/${slug}`}>
+                            <a>
+                              <OpportunityCard
+                                name={postingName}
+                                organization={orgName}
+                                location={city}
+                                category={tags}
+                                postingDate={postedDate}
+                                logo={orgImages}
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                      )
+                    )}
                 </>
               )}
             </ResultsWrapper>
@@ -149,9 +172,9 @@ const InputsWrapper = styled.div`
   align-items: center;
   margin: 20px 0;
   ${media(
-    "mobile",
+    "tablet",
     `
-        margin-top: 20px;
+        margin-top: 40px;
         `
   )};
 `;
@@ -165,14 +188,11 @@ const SInput = styled(Input)`
   @media only screen and (min-width: 1600px) {
     width: 50%;
   }
-  ${media(
-    "tablet",
-    `
-        width: 80%;
-        margin-top: 0;
-        margin-bottom: 30px;
-        `
-  )};
+  @media only screen and (max-width: 1050px) {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 30px;
+  }
 `;
 
 const FilterTitle = styled(Text)`
@@ -187,33 +207,29 @@ const FilterTitle = styled(Text)`
 const FilterWrapper = styled.div`
   max-width: 250px;
   margin: 10px 50px 30px 80px;
-  ${media(
-    "tablet",
-
-    `   
-      margin: 0 10px;
-      flex-direction: column;
-      justify-content: center;
-      min-width:100%;
-        `
-  )};
+  @media only screen and (max-width: 1050px) {
+    margin: 0 10px;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%;
+  }
 `;
 
 const BottomWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  ${media(
-    "tablet",
-    `
-        margin-top: 20px;
-        flex-direction: column;
-        `
-  )};
+  margin-bottom: 5%;
+  @media only screen and (max-width: 1050px) {
+    margin-top: 20px;
+    flex-direction: column;
+  }
 `;
 
 const ResultsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 0 5%;
 `;
 
 export async function getStaticProps() {
@@ -223,8 +239,9 @@ export async function getStaticProps() {
   } catch (e) {
     opps = opportunities;
   }
-  opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
-  opps = opps.filter((opp) => opp.published);
+  opps = opps
+    .sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1))
+    .filter((opp) => opp.published);
 
   return {
     props: { opps },
