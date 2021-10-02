@@ -7,7 +7,6 @@ import { posts } from "../cache/cache";
 const DIGEST_PATHS = join(process.cwd(), "_digest");
 const AUTHOR_PATHS = join(process.cwd(), "_author");
 const OPPORTUNITIES_PATHS = join(process.cwd(), "_direct");
-const EVENTS_PATHS = join(process.cwd(), "_events");
 
 const MONTH = 0;
 
@@ -30,9 +29,6 @@ export function getSlug(pathType, slugName) {
     case "opp":
       folderPath = OPPORTUNITIES_PATHS;
       break;
-    case "event":
-      folderPath = EVENTS_PATHS;
-      break;
     default:
       folderPath = "";
   }
@@ -41,17 +37,6 @@ export function getSlug(pathType, slugName) {
   const { data, content } = matter(fileContents);
   return { data, content };
 }
-
-export const getEventSlugs = () => {
-  const allEventsPath = fs.readdirSync(EVENTS_PATHS);
-  const events = allEventsPath.map((event) => {
-    const slug = event.replace(/\.mdx?$/, "");
-    return {
-      slug,
-    };
-  });
-  return events;
-};
 
 export const getOpportunitySlugs = () => {
   const allOpportunityPath = fs.readdirSync(OPPORTUNITIES_PATHS);
