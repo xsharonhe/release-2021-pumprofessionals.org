@@ -34,6 +34,29 @@ const PumpPlus = () => {
       <PageLayout>
         <Title title="PuMP+" arrowLink="/events" />
         <Wrapper>
+          <h2 style={{ marginTop: "5%" }}>
+            Want to learn more about opportunities in STEM and how to get involved in
+            your community?
+          </h2>
+          <p style={{ lineHeight: "1.5rem" }}>
+            We are excited to announce <b>PuMP’s 3rd annual STEM fair</b>, PuMP+!
+            Join our Toronto branch in February and hear from booths about research
+            opportunities, university programs, and much more! We’ll be raffling off
+            lots of prizes, and the best part? It’s all free! Register today on the
+            Eventbrite pages below - we’re looking forward to seeing you there.
+          </p>
+          <ButtonWrapper>
+            <Button>
+              <a
+                href="https://bit.ly/pumpplus22"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}
+              >
+                Sign up
+              </a>
+            </Button>
+          </ButtonWrapper>
           <CarouselWrapper>
             <ImageCardCarousel
               id="quick-facts"
@@ -68,11 +91,8 @@ const PumpPlus = () => {
               ]}
             />
           </CarouselWrapper>
-          <h2>
-            Want to learn more about opportunities in STEM and how to get involved in
-            your community?
-          </h2>
-          <div>
+          <h2>What is PuMP+?</h2>
+          <div style={{ lineHeight: "1.5rem" }}>
             <p>
               PuMP+ is our annual STEM fair connecting high school students to
               various opportunities within the health sciences, from research to
@@ -88,26 +108,7 @@ const PumpPlus = () => {
               presentations, organizations shared opportunities for students to
               engage in research, social advocacy, volunteering and leadership.
             </p>
-            <p>
-              We are excited to announce <b>PuMP’s 3rd annual STEM fair</b>, PuMP+!
-              Join our Toronto branch in February and hear from booths about research
-              opportunities, university programs, and much more! We’ll be raffling
-              off lots of prizes, and the best part? It’s all free! Register today on
-              the Eventbrite pages below - we’re looking forward to seeing you there.
-            </p>
           </div>
-          <ButtonWrapper>
-            <Button>
-              <a
-                href="https://bit.ly/pumpplus22"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}
-              >
-                Sign up
-              </a>
-            </Button>
-          </ButtonWrapper>
           <CarouselWrapper>
             <TestimonialCarousel
               slides={testimonials}
