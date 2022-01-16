@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import { 
-  Video, 
-  TestimonialCarousel, 
-  Text, 
-  SectionWrapper, 
-  Notification 
+import {
+  Video,
+  TestimonialCarousel,
+  Text,
+  SectionWrapper,
+  Notification,
 } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { TopSection, WhatsHappening, ContactSection } from "../sections/home";
