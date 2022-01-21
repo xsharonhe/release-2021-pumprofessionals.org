@@ -142,7 +142,7 @@ const vancouverBoard = [
 
 const calgaryBoard = [
   {
-    name: "Brookyln Wiggins",
+    name: "Brooklyn Wiggins",
     avatar: Brooklyn,
     position: "President",
     imageWidth: 240,

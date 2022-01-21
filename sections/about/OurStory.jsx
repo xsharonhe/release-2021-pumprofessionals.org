@@ -16,8 +16,14 @@ export const OurStory = ({ ...props }) => {
         post-secondary students understand different career pathways in life and
         health sciences.
       </Description>
-      <Description style={{ justifyContent: "flex-start", fontSize: baseTheme.size.defaultLarger, fontWeight: "bold" }}>
-          Our goals are to:
+      <Description
+        style={{
+          justifyContent: "flex-start",
+          fontSize: baseTheme.size.defaultLarger,
+          fontWeight: "bold",
+        }}
+      >
+        Our goals are to:
       </Description>
       <List>
         <Item>
