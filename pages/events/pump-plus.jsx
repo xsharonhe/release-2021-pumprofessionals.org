@@ -5,6 +5,7 @@ import {
   ImageCardCarousel,
   TestimonialCarousel,
   Button,
+  Video,
 } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import TieDye from "../../public/about/tiedye-rect.png";
@@ -46,6 +47,7 @@ const PumpPlus = () => {
       <PageLayout>
         <Title title="PuMP+" arrowLink="/events" />
         <Wrapper>
+          <Video embedId="Vt1bvyoHA64" />
           <h2 style={{ marginTop: "5%" }}>
             Want to learn more about opportunities in STEM and how to get involved in
             your community?
