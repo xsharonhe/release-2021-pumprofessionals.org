@@ -40,7 +40,7 @@ export default function Home() {
           content="A registered charity dedicated to connecting aspiring students to health sciences opportunities."
         />
       </Head>
-      <Notification path="/resources/blog" notif="View now!">
+      <Notification path="resources/blog#March2022" notif="View now!">
         New blog posts released on PuMP Digest.&nbsp;
       </Notification>
       <PageLayout>
