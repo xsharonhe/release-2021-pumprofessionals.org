@@ -15,7 +15,7 @@ export default function Resources({ ...props }) {
         <iframe
           id="JotFormIFrame-221947443957064"
           title="PuMP Foundation Scholarship"
-          onLoad={() => window.parent.scrollTo(0,0)}
+          onLoad={() => window.parent.scrollTo(0, 0)}
           allowtransparency="true"
           allowFullScreen={true}
           allow="geolocation; microphone; camera"
