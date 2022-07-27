@@ -2,6 +2,7 @@ import styled from "styled-components";
 import PumpDigest from "../../public/resources/pump-digest.png";
 import ImpactReport from "../../public/about/impact-report.png";
 import PowerUp from "../../public/events/power-up.png";
+import PumpScholarship from "../../public/events/PumpScholarship.png";
 import { CardCarousel, Text } from "../../components";
 
 import { baseTheme } from "../../theme";
@@ -16,6 +17,15 @@ export const WhatsHappening = ({ ...props }) => (
       <CardCarousel
         className="regular-carousel"
         slides={[
+          {
+            title: "PuMP Foundation Scholarship",
+            description: 
+              "Applying for medical school and in financial need? PuMP is providing 2 aspiring physicians with a $500 scholarship to support the cost of application fees.",
+            thumbnail: PumpScholarship,
+            buttonText: "Apply now",
+            linkTo: "/scholarship",
+            imageHeight: 240
+          },
           {
             title: "PuMP Digest",
             description:
@@ -39,8 +49,8 @@ export const WhatsHappening = ({ ...props }) => (
             thumbnail: PowerUp,
             buttonText: "Learn More",
             linkTo: "/events/power-up",
-            imageHeight: 250,
-          },
+            imageHeight: 240,
+          }
         ]}
         cardHeight={530}
       />
