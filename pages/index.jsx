@@ -6,7 +6,7 @@ import {
   TestimonialCarousel,
   Text,
   SectionWrapper,
-  Notification,
+  // Notification,
 } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { TopSection, WhatsHappening, ContactSection } from "../sections/home";
@@ -40,9 +40,9 @@ export default function Home() {
           content="A registered charity dedicated to connecting aspiring students to health sciences opportunities."
         />
       </Head>
-      <Notification path="scholarship" notif="Apply now!">
+      {/* <Notification path="scholarship" notif="Apply now!">
         Applications for the PuMP Foundation Scholarship are now open.&nbsp;
-      </Notification>
+      </Notification> */}
       <PageLayout>
         <TopSection />
         <WhatsHappening />
