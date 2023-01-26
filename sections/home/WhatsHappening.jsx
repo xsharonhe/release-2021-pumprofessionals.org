@@ -19,12 +19,12 @@ export const WhatsHappening = ({ ...props }) => (
         slides={[
           {
             title: "PuMP Foundation Scholarship",
-            description: 
+            description:
               "Applying for medical school and in financial need? PuMP is providing 2 aspiring physicians with a $500 scholarship to support the cost of application fees.",
             thumbnail: PumpScholarship,
             buttonText: "Apply now",
             linkTo: "/scholarship",
-            imageHeight: 240
+            imageHeight: 240,
           },
           {
             title: "PuMP Digest",
@@ -50,7 +50,7 @@ export const WhatsHappening = ({ ...props }) => (
             buttonText: "Learn More",
             linkTo: "/events/power-up",
             imageHeight: 240,
-          }
+          },
         ]}
         cardHeight={530}
       />
