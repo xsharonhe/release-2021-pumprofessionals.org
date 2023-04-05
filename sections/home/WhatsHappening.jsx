@@ -1,180 +1,76 @@
-import Image from "next/image";
-import Link from "next/link";
 import styled from "styled-components";
+import PumpDigest from "../../public/resources/pump-digest.png";
+import ImpactReport from "../../public/about/impact-report.png";
+import PowerUp from "../../public/events/power-up.png";
+import { CardCarousel, Text } from "../../components";
 
-import PumpLogo from "../public/pump-logo.png";
-import FacebookLogo from "../public/fb.svg";
-import InstagramLogo from "../public/instagram.svg";
-import { CONSTANTS, media } from "../utils";
-import { Text } from "../components";
+import { baseTheme } from "../../theme";
+import { media } from "../../utils";
 
-const PATHS = ["", "about", "resources", "events", "community", "contact"];
-
-export const Footer = ({ path, ...props }) => (
-  <FooterContainer {...props}>
-    <FirstColumn>
-      <Image src={PumpLogo} alt="Pump Logo" width={120} height={50} />
-      <SText lineHeight="24px" style={{ padding: "20px 0 20px 0" }}>
-        {CONSTANTS.registered_charity_descr}
-      </SText>
-      <SText size="small">{CONSTANTS.copyright}</SText>
-      <SText>
-        Charitable registration number:&nbsp;
-        <b>{CONSTANTS.charitable_registration_number}</b>
-      </SText>
-    </FirstColumn>
-    <SecondColumn>
-      <JosefinNoHoverText bold size="defaultLarger" style={{ marginBottom: "20px" }}>
-        Navigation
-      </JosefinNoHoverText>
-      {/* TODO: need to add links to appropriate pages */}
-      {CONSTANTS.resources.map((resource, index) => (
-        <JosefinText key={resource}>
-          <Link href={`/${PATHS[index]}`}>
-            <ResourceLink isSelected={path == PATHS[index]}>{resource}</ResourceLink>
-          </Link>
-        </JosefinText>
-      ))}
-    </SecondColumn>
-    <ThirdColumn>
-      <JosefinNoHoverText bold size="defaultLarger" style={{ marginBottom: "20px" }}>
-        Contact
-      </JosefinNoHoverText>
-      <a href={`mailto:${CONSTANTS.email}`}>
-        <Email>{CONSTANTS.email}</Email>
-      </a>
-      <JosefinNoHoverText>{CONSTANTS.address}</JosefinNoHoverText>
-      <LogoContainer>
-        <a href={CONSTANTS.facebook} target="_blank" rel="noopener noreferrer">
-          <Logo>
-            <SocialMedia
-              src={FacebookLogo}
-              alt="Facebook Logo"
-              width={50}
-              height={50}
-            />
-          </Logo>
-        </a>
-        <a href={CONSTANTS.instagram} target="_blank" rel="noopener noreferrer">
-          <Logo>
-            <SocialMedia
-              src={InstagramLogo}
-              alt="Instagram Logo"
-              width={50}
-              height={50}
-            />
-          </Logo>
-        </a>
-      </LogoContainer>
-    </ThirdColumn>
-  </FooterContainer>
+export const WhatsHappening = ({ ...props }) => (
+  <Wrapper {...props}>
+    <Title size={baseTheme.size.h1} bold="true">
+      What&apos;s Happening?
+    </Title>
+    <CarouselWrapper>
+      <CardCarousel
+        className="regular-carousel"
+        slides={[
+          {
+            title: "PuMP Digest",
+            description:
+              "A student blog with seasonal releases on topics ranging from novel biomedical research to study tips to post-secondary advice.",
+            thumbnail: PumpDigest,
+            buttonText: "Learn More",
+            linkTo: "/resources/blog",
+          },
+          {
+            title: "Impact Report",
+            description:
+              "We are heading into our third year of operations! Read about our projects and accomplishments from the 2020-21 fiscal year in our first ever impact report.",
+            thumbnail: ImpactReport,
+            buttonText: "Learn More",
+            linkTo: "/about#impact-report",
+          },
+          {
+            title: "PowerUp Mentorship",
+            description:
+              "PowerUp pairs high school students to undergraduate mentors studying the health, life, or biological sciences.",
+            thumbnail: PowerUp,
+            buttonText: "Learn More",
+            linkTo: "/events/power-up",
+            imageHeight: 250,
+          },
+        ]}
+        cardHeight={530}
+      />
+    </CarouselWrapper>
+  </Wrapper>
 );
 
-const FooterContainer = styled.div`
+const Wrapper = styled.div`
+  margin: 12vh 0;
+  padding: 0 2%;
+  ${media(
+    1400,
+    `   
+            padding: 0 6%;
+        `
+  )};
+`;
+const CarouselWrapper = styled.div`
+  margin: 0 6%;
+  ${media(
+    1400,
+    `   
+            margin: auto;
+        `
+  )};
+`;
+const Title = styled(Text)`
+  padding: 0 5%;
   ${({ theme }) => `
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        font-family: ${theme.font.lato};
-        font-size: ${theme.size.small};
-        background-color: ${theme.colors.navy};
-        color: ${theme.colors.text};
-    `};
-
-  ${media(
-    "tablet",
-    `
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 40px 100px;
-        `
-  )};
-  ${media(
-    "mobile",
-    `
-        padding: 40px 50px;
-        `
-  )};
-`;
-const SText = styled(Text)`
-  ${({ theme }) => `
-        color: ${theme.colors.white};
-    `}
-  ${media(
-    "mobile",
-    `
-        line-height: 1.3;
-        `
-  )};
-`;
-const JosefinNoHoverText = styled(SText)`
-  ${({ theme }) => `
-        font-family: ${theme.font.josefin};
-    `};
-`;
-const JosefinText = styled(JosefinNoHoverText)`
-  :hover {
-    opacity: 70%;
-    cursor: pointer;
-    ${({ theme }) => `
-        color: ${theme.colors.brightBlue};
-    `};
-  }
-`;
-const Email = styled(JosefinText)`
-  text-decoration: underline;
-`;
-const LogoContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-const Logo = styled.div`
-  margin-right: 20px;
-`;
-const SocialMedia = styled(Image)`
-  ${media(
-    "mobile",
-    `
-        width: 70%;
-        `
-  )};
-  :hover {
-    opacity: 80%;
-  }
-`;
-const ResourceLink = styled.a`
-  ${({ theme, isSelected }) => `
-        color: ${isSelected ? theme.colors.yellow : theme.colors.white};
-        :hover {
-            cursor: pointer;
-            color: ${isSelected ? theme.colors.yellow : theme.colors.brightBlue};
-        }
+      font-family: ${theme.font.josefin};
+      color: ${theme.colors.navy};
   `};
-`;
-const FirstColumn = styled.div`
-  padding: 110px 20px 100px 100px;
-  ${media(
-    "tablet",
-    `
-        padding: 20px 0 0 0;
-        `
-  )};
-`;
-const SecondColumn = styled.div`
-  padding: 100px 20px 100px 100px;
-  ${media(
-    "tablet",
-    `
-        padding: 0;
-        `
-  )};
-`;
-const ThirdColumn = styled.div`
-  padding: 100px 100px 100px 20px;
-  ${media(
-    "tablet",
-    `
-        padding: 0 0 20px 0;
-        `
-  )};
 `;
