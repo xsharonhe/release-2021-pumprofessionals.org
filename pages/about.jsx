@@ -155,6 +155,30 @@ const vancouverBoard = [
 
 const calgaryBoard = [
   {
+    name: "Isabella Quartly",
+    avatar: Isabella,
+    position: "President",
+    cardHeight: 370,
+    fontColor: baseTheme.colors.brightBlue,
+  },
+  {
+    name: "Orchee Haque",
+    avatar: Orchee,
+    position: "VP of Internal Affairs",
+    cardHeight: 370,
+    imageWidth: 240,
+  },
+  {
+    name: "Kausar Virji",
+    avatar: Default,
+    position: "VP of External Affairs",
+    cardHeight: 370,
+    fontColor: baseTheme.colors.gold,
+  },
+];
+
+const ottawaBoard = [
+  {
     name: "Williams Thottungal",
     avatar: Williams,
     position: "President",
@@ -175,30 +199,6 @@ const calgaryBoard = [
     position: "VP of Public Relations",
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
-  },
-];
-
-const ottawaBoard = [
-  {
-    name: "Isabella Quartly",
-    avatar: Isabella,
-    position: "President",
-    cardHeight: 370,
-    fontColor: baseTheme.colors.brightBlue,
-  },
-  {
-    name: "Orchee Haque",
-    avatar: Orchee,
-    position: "VP of Internal Affairs",
-    cardHeight: 370,
-    imageWidth: 240,
-  },
-  {
-    name: "Kausar Virji",
-    avatar: Default,
-    position: "VP of External Affairs",
-    cardHeight: 370,
-    fontColor: baseTheme.colors.gold,
   },
 ];
 
