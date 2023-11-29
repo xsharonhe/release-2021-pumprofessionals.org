@@ -3,28 +3,28 @@ import styled from "styled-components";
 
 import AboutUs from "../public/about/AboutUs-Top.png";
 import ImpactReport from "../public/about/impact-report.svg";
-import Shirothie from "../public/members/Shirothie-Puwaneswaran.png"
-import Bryan from "../public/members/Bryan-Liu.jpg"
-import Selim from "../public/members/Selim-Choi.png"
-import Joshua from "../public/members/Joshua-Cheruvathur.png"
-import Catherine from "../public/members/Catherine-Jiang.png"
-import Nihal from "../public/members/Nihal-Yapici.png"
-import Vasharna from "../public/members/Vasharna-Thangavel.png"
-import Stephanie from "../public/members/Stephanie-Murariu.jpg"
-import Victoria from "../public/members/Victoria-Yu.jpg"
-import Phoebe from "../public/members/Phoebe-Yu.jpg"
-import Vivian from "../public/members/Vivian-Song.png"
-import Daniel from "../public/members/Daniel-Zhang.png"
-import Anushka from "../public/members/Anushka-Dsouza.png"
-import Max from "../public/members/Max-Li.png"
-import Rhienna from "../public/members/Rhienna-Patel.png"
-import Amaan from "../public/members/Amaan-Khera.png"
-import Williams from "../public/members/Williams-Thottungal.png"
-import Adam from "../public/members/Adam-Yeh.png"
-import Kathy from "../public/members/Kathy-Tong.jpg"
-import Isabella from "../public/members/Isabella-Quartly.jpg"
-import Orchee from "../public/members/Orchee-Haque.png"
-import Default from "../public/members/card-fill.png"
+import Shirothie from "../public/members/Shirothie-Puwaneswaran.png";
+import Bryan from "../public/members/Bryan-Liu.jpg";
+import Selim from "../public/members/Selim-Choi.png";
+import Joshua from "../public/members/Joshua-Cheruvathur.png";
+import Catherine from "../public/members/Catherine-Jiang.png";
+import Nihal from "../public/members/Nihal-Yapici.png";
+import Vasharna from "../public/members/Vasharna-Thangavel.png";
+import Stephanie from "../public/members/Stephanie-Murariu.jpg";
+import Victoria from "../public/members/Victoria-Yu.jpg";
+import Phoebe from "../public/members/Phoebe-Yu.jpg";
+import Vivian from "../public/members/Vivian-Song.png";
+import Daniel from "../public/members/Daniel-Zhang.png";
+import Anushka from "../public/members/Anushka-Dsouza.png";
+import Max from "../public/members/Max-Li.png";
+import Rhienna from "../public/members/Rhienna-Patel.png";
+import Amaan from "../public/members/Amaan-Khera.png";
+import Williams from "../public/members/Williams-Thottungal.png";
+import Adam from "../public/members/Adam-Yeh.png";
+import Kathy from "../public/members/Kathy-Tong.jpg";
+import Isabella from "../public/members/Isabella-Quartly.jpg";
+import Orchee from "../public/members/Orchee-Haque.png";
+import Default from "../public/members/card-fill.png";
 
 import { Title, LeftImageTextLayout, SectionWrapper } from "../components";
 import { PageLayout } from "../sections/hoc";
@@ -37,7 +37,7 @@ const nationalBoard = [
     avatar: Shirothie,
     position: "President",
     cardHeight: 370,
-    imageWidth: 250
+    imageWidth: 250,
   },
   {
     name: "Bryan Liu",
