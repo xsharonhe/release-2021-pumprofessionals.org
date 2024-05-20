@@ -231,7 +231,7 @@ export default function About() {
           buttons={[
             {
               text: "Click to View",
-              link: "https://www.flipsnack.com/pumprofessionals/impact-report-2020-2021.html",
+              link: "/about/PuMP_Impact_Report_2022-23.pdf",
               external: true,
             },
           ]}
