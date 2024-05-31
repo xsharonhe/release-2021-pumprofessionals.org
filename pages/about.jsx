@@ -2,7 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 
 import AboutUs from "../public/about/AboutUs-Top.png";
-import ImpactReport from "../public/about/impact-report.svg";
+import ImpactReport from "../public/about/impact-report-2023.png";
 import Shirothie from "../public/members/Shirothie-Puwaneswaran.png";
 import Bryan from "../public/members/Bryan-Liu.jpg";
 import Selim from "../public/members/Selim-Choi.png";
@@ -225,7 +225,7 @@ export default function About() {
           imageWidth={400}
           imageHeight={282}
           descriptions={[
-            `This summer, we are excited to head into our third year of operations! Read about our projects from the 2020-2021 fiscal year in our first ever impact report below.`,
+            `Read about our projects from the 2022-2023 fiscal year in our impact report below!`,
             `Our team is dedicated to upholding our core values of community, transparency, and youth empowerment. We look forward to releasing next year's annual report and cannot wait to see what the future holds.`,
           ]}
           buttons={[
