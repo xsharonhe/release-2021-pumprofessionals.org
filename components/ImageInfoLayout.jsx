@@ -1,4 +1,4 @@
-import Image from "next/image";
+ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import PropTypes from "prop-types";
@@ -100,7 +100,7 @@ const Graphic = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding: 4vh 0;
+  padding: 1vh 0;
   display: flex;
   ${({ isgraphicleft }) => `
       flex-direction: ${isgraphicleft ? "row" : "row-reverse"}
