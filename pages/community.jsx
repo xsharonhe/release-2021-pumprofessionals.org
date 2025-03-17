@@ -392,31 +392,29 @@ export default function Community() {
           </SponsorsWrapper>
           <Subtitle>Our Sponsors</Subtitle>
           <SponsorsWrapper>
-            {sponsors.map((sponsor) => sponsor.link ? (
-              <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
-                <a
-                  href={sponsor.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+            {sponsors.map((sponsor) =>
+              sponsor.link ? (
+                <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
+                  <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={sponsor.image}
+                      height={sponsor.height}
+                      width={sponsor.width}
+                      alt={`Logo for ${sponsor.title}`}
+                    />
+                  </a>
+                </ImageContainer>
+              ) : (
+                <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
                   <Image
                     src={sponsor.image}
                     height={sponsor.height}
                     width={sponsor.width}
                     alt={`Logo for ${sponsor.title}`}
                   />
-                </a>
-              </ImageContainer>
-            ) : (
-              <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
-                <Image
-                  src={sponsor.image}
-                  height={sponsor.height}
-                  width={sponsor.width}
-                  alt={`Logo for ${sponsor.title}`}
-                />
-              </ImageContainer>
-            ))}
+                </ImageContainer>
+              )
+            )}
           </SponsorsWrapper>
         </Wrapper>
       </PageLayout>
@@ -428,14 +426,14 @@ const Wrapper = styled.div`
   padding: 0 2%;
   margin-top: 5%;
   ${media(
-          "tablet",
-          `   
+    "tablet",
+    `   
             padding: 0 6%;
         `
   )};
   ${media(
-          500,
-          `   
+    500,
+    `   
             margin-top: 10%;
         `
   )};
@@ -448,8 +446,8 @@ const SponsorsWrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
   ${media(
-          500,
-          `   
+    500,
+    `   
             margin: 10% 0;
         `
   )};
