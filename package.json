@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "cache-posts": "node lib/cache.js",
     "format": "prettier-eslint --write \"{,!(node_modules)/**/}*.{js,jsx}\"",
@@ -21,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "^3.10.0",
+    "@prisma/client": "^6.19.3",
     "@styled-icons/bootstrap": "^10.34.0",
     "axios": "^0.24.0",
     "emailjs-com": "^3.2.0",
@@ -51,7 +51,7 @@
     "eslint-plugin-react": "^7.29.3",
     "husky": "^4.3.8",
     "lint-staged": "^11.2.6",
-    "prisma": "^3.10.0"
+    "prisma": "^6.19.3"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
