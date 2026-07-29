@@ -28,7 +28,7 @@
     "gray-matter": "^4.0.3",
     "multiselect-react-dropdown": "^2.0.21",
     "next": "^12.1.0",
-    "next-mdx-remote": "^4.0.0",
+    "next-mdx-remote": "^6.0.0",
     "nprogress": "^0.2.0",
     "prettier": "^2.5.1",
     "prettier-eslint": "^8.2.2",
