@@ -14,7 +14,7 @@ import { media, CONSTANTS } from "../utils";
 const overMessageLimit = false;
 const customError = () => (
   <div>
-    <span role="img" arial-label="waving-hand">
+    <span role="img" aria-label="waving-hand">
       👋
     </span>{" "}
     Unfortunately, we could not send the form due to an internal server error. Please

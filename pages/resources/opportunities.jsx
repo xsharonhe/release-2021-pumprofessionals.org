@@ -22,7 +22,7 @@ import { media } from "../../utils";
 
 const customError = () => (
   <div>
-    <span role="img" arial-label="waving-hand">
+    <span role="img" aria-label="waving-hand">
       👋
     </span>{" "}
     Unfortunately, we could not reach our database due to an internal server error.
