@@ -5,6 +5,7 @@ import styled from "styled-components";
 import AromaCafe from "../public/sponsors/AromaCafe.png";
 import BasilBox from "../public/sponsors/Basil Box.png";
 import BrainPower from "../public/sponsors/Brain Power.png";
+import CCSYR from "../public/sponsors/CCSYR Logo from Partner Logos.png";
 import Cetaphil from "../public/sponsors/Cetaphil.png";
 import Chipotle from "../public/sponsors/Chipotle.png";
 import CJAY from "../public/sponsors/CJAY.png";
@@ -23,6 +24,8 @@ import Mediclo from "../public/sponsors/Mediclo.png";
 import Microbi from "../public/sponsors/Microbi.png";
 import MorganCrossing from "../public/sponsors/MorganCrossing.png";
 import NDNextDoor from "../public/sponsors/NDNextDoor.png";
+import NYCH from "../public/sponsors/NYCH Partner Logos.png";
+import OCCSC from "../public/sponsors/OCCSC Logo.jpg";
 import Oztrekk from "../public/sponsors/oztrekk_logo.png";
 import Pearson from "../public/sponsors/pearson.png";
 import Reptilla from "../public/sponsors/Reptilia.png";
@@ -266,6 +269,24 @@ const sponsors = [
 ];
 
 const communityPartners = [
+  {
+    title: "CCSYR",
+    image: CCSYR,
+    width: 200,
+    height: 120,
+  },
+  {
+    title: "NYCH",
+    image: NYCH,
+    width: 250,
+    height: 100,
+  },
+  {
+    title: "OCCSC",
+    image: OCCSC,
+    width: 150,
+    height: 150,
+  },
   {
     title: "Leap",
     image: Leap,
